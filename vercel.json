@@ -1,12 +1,15 @@
 {
   "builds": [{
-    "src": "./app.py",
+    "src": "app.py",
     "use": "@vercel/python"
   }],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "app.py"
     }
-  ]
+  ],
+  "env": {
+      "DATABASE_URL": "postgres://default:7Vxa6mIUDeop@ep-ancient-shape-a4mn5jxw-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+    }
 }
